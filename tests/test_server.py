@@ -1,6 +1,6 @@
 import socket
 import threading
-from server import iniciar_servidor
+from server.server import iniciar_servidor
 
 
 def test_servidor_responde() -> None:

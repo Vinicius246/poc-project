@@ -1,5 +1,5 @@
-from client import conectar_servidor
-from server import iniciar_servidor
+from client.client import conectar_servidor
+from server.server import iniciar_servidor
 import threading
 
 

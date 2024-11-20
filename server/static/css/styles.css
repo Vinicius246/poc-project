@@ -1,0 +1,51 @@
+/* index.css */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(../image/bg.jpg);
+  align-items: baseline;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 12% 35px;
+}
+
+.title {
+  color: white;
+  margin-right: 10px;
+  width: 50%;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.container {
+  width: 50%;
+  background: white;
+  border-radius: 40px;
+  min-height: 320px;
+}
+
+.menu {
+  margin-top: 20px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locação de Auditórios</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <h1>Lista de Auditórios</h1>
+        <ul>
+            {% for auditorio in auditorios %}
+            <li>{{ auditorio['nome'] }}: {{ auditorio['capacidade']['lugares_sentados'] }} lugares</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Voltar</a>
+    </div>
+  </body>
+</html>

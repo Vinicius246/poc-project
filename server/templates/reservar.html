@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locação de Auditórios</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <h1>Reservar Auditório</h1>
+        <form method="post">
+            <!-- Seleção de auditórios -->
+            <label for="auditorio_id">Auditório:</label>
+            <select name="auditorio_id" id="auditorio_id" required>
+                <option value="">Selecione um auditório</option>
+                {% for auditorio in auditorios %}
+                <option value="{{ auditorio.id }}">{{ auditorio.nome }}</option>
+                {% endfor %}
+            </select>
+            <br>
+        
+            <!-- Campo de data -->
+            <label for="data">Data (YYYY-MM-DD):</label>
+            <input type="date" name="data" id="data" required>
+            <br>
+        
+            <!-- Seleção de horários disponíveis -->
+            <label for="horario">Horário:</label>
+            <select name="horario" id="horario" required>
+                <option value="">Selecione um horário</option>
+            </select>
+            <br>
+        
+            <button type="submit">Reservar</button>
+        </form>
+        
+        <script>
+            // Script para atualizar os horários disponíveis
+            const auditorioSelect = document.getElementById('auditorio_id');
+            const horarioSelect = document.getElementById('horario');
+        
+            auditorioSelect.addEventListener('change', function() {
+                const horarios = {% for auditorio in auditorios %}
+                    { "{{ auditorio.id }}": {{ auditorio.horarios|tojson }} }
+                {% endfor %};
+        
+                const selectedAuditorio = auditorioSelect.value;
+                horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
+        
+                if (selectedAuditorio && horarios[selectedAuditorio]) {
+                    horarios[selectedAuditorio].forEach(horario => {
+                        const option = document.createElement('option');
+                        option.value = horario;
+                        option.textContent = horario;
+                        horarioSelect.appendChild(option);
+                    });
+                }
+            });
+        </script>
+        <a href="/">Voltar</a>
+    </div>
+  </body>
+</html>

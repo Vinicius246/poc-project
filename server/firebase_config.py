@@ -22,3 +22,4 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://poc-project-cdac7-default-rtdb.firebaseio.com/'  # URL do Realtime Database
 })
 
+
