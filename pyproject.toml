@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+strict = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--verbose"
+testpaths = [
+    "tests"
+]
+
+[project]
+name = "poc"
+version = "1.0.0"
+description = "Prova de Conceito com arquitetura Cliente-Servidor"
+authors = [
+    {name = "Vinicius", email = "viniciusmartins12072000@gmail.com"}
+]
+dependencies = []
