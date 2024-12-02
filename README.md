@@ -58,9 +58,9 @@ A aplicação segue o padrão **Cliente-Servidor**:
    venv\Scripts\activate     # Windows
    ```
 
-3. **Instale as dependências**:
+3. **Instale as dependências necessárias**:
    ```bash
-   pip install -r requirements.txt
+   pip install flask requests
    ```
 
 4. **Inicialize o banco de dados**:
@@ -96,3 +96,21 @@ A aplicação segue o padrão **Cliente-Servidor**:
 - Nomes autoexplicativos.
 
 ---
+
+## **Contribuições**
+Contribuições são bem-vindas! Para contribuir:
+1. Faça um fork do repositório.
+2. Crie uma branch para sua feature:
+   ```bash
+   git checkout -b minha-feature
+   ```
+3. Faça commit das suas alterações:
+   ```bash
+   git commit -m "Minha nova feature"
+   ```
+4. Submeta um pull request.
+
+---
+
+## **Licença**
+Este projeto está sob a licença [MIT](LICENSE).
