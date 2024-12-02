@@ -1,7 +1,7 @@
 import socket
 import json
 from firebase_admin import firestore
-from firebase_config import db  # Arquivo firebase_config.py com a configuração do Firestore
+from server.firebase_config import db  # Arquivo firebase_config.py com a configuração do Firestore
 
 def carregar_auditorios():
     """Carrega os auditórios do Realtime Database."""
